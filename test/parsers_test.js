@@ -271,6 +271,15 @@ var platformTests = [
     invalidManifestPaths: []
   },
   {
+    platform: 'hexLock',
+    fixture: 'mix.lock',
+    expected: [
+      {name: 'cowboy', version: '1.0.0', type: 'runtime'}
+    ],
+    validManifestPaths: ['mix.lock'],
+    invalidManifestPaths: []
+  },
+  {
     platform: 'pypi',
     fixture: 'requirements.txt',
     expected: [
@@ -281,8 +290,8 @@ var platformTests = [
       {name: 'scikit-learn', version: '==0.16.1', type: 'runtime'},
       {name: 'Beaker', version: '>=1.6.5', type: 'runtime'}
     ],
-    validManifestPaths: ['requirements.txt'],
-    invalidManifestPaths: []
+    validManifestPaths: ['requirements.txt', 'test/simple-requirements/requirements.txt'],
+    invalidManifestPaths: ['node_modules/require-dir/test/duplicates/b/1.txt']
   },
   {
     platform: 'pypiSetup',
